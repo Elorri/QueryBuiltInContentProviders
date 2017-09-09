@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         //Dynamics uris have been listed here and therefore some provider don't show up (eg
         // DocumentProvider because it uses only dynamic uris).
         Uri[] builtInUris = new Uri[]{
-                Browser.BOOKMARKS_URI,
-                Browser.SEARCHES_URI,
                 CalendarContract.CONTENT_URI,
                 CalendarContract.CalendarEntity.CONTENT_URI,
                 CalendarContract.Calendars.CONTENT_URI,
@@ -66,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 ContactsContract.SyncState.CONTENT_URI,
                 ContactsContract.ProfileSyncState.CONTENT_URI,
                 ContactsContract.Contacts.CONTENT_URI,
-                ContactsContract.Contacts.CORP_CONTENT_URI,
                 ContactsContract.Contacts.CONTENT_LOOKUP_URI,
                 ContactsContract.Contacts.CONTENT_VCARD_URI,
                 ContactsContract.Contacts.CONTENT_MULTI_VCARD_URI,
@@ -100,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
                 ContactsContract.Groups.CONTENT_SUMMARY_URI,
                 ContactsContract.AggregationExceptions.CONTENT_URI,
                 ContactsContract.Settings.CONTENT_URI,
-                ContactsContract.ProviderStatus.CONTENT_URI,
                 ContactsContract.DataUsageFeedback.FEEDBACK_URI,
                 ContactsContract.DataUsageFeedback.DELETE_USAGE_URI,
                 ContactsContract.DisplayPhoto.CONTENT_URI,
@@ -129,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 Settings.System.DEFAULT_RINGTONE_URI,
                 Settings.Secure.CONTENT_URI,
                 Settings.Global.CONTENT_URI,
-                Settings.Bookmarks.CONTENT_URI,
                 Telephony.Sms.CONTENT_URI,
                 Telephony.Sms.Inbox.CONTENT_URI,
                 Telephony.Sms.Sent.CONTENT_URI,
@@ -155,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
                 Telephony.MmsSms.SEARCH_URI,
                 Telephony.MmsSms.PendingMessages.CONTENT_URI,
                 Telephony.Carriers.CONTENT_URI,
-                Telephony.CellBroadcasts.CONTENT_URI,
                 UserDictionary.CONTENT_URI,
                 UserDictionary.Words.CONTENT_URI,
                 VoicemailContract.Voicemails.CONTENT_URI,
