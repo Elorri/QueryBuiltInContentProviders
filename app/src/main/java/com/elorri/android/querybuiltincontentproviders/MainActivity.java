@@ -1,8 +1,9 @@
 package com.elorri.android.querybuiltincontentproviders;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Browser;
 import android.provider.CalendarContract;
 import android.provider.CallLog;
 import android.provider.ContactsContract;
@@ -156,8 +157,91 @@ public class MainActivity extends AppCompatActivity {
                 VoicemailContract.Status.CONTENT_URI
         };
 
+        String[] builtInProviderDesc = describeUris(this, builtInUris);
+        writeTableOfStringToFile(providersOverview, builtInProviderDesc);
+    }
 
-        writeTableOfStringToFile(providersOverview, new String[]{"Hello", "World"});
+    private String[] describeUris(Context context, Uri[] uris) {
+        String[] urisDescs = new String[uris.length];
+
+        int i = 0;
+        for (Uri anUri : uris) {
+            urisDescs[i] = describeUri(context, anUri);
+            i++;
+        }
+        return urisDescs;
+    }
+
+    private String describeUri(Context context, Uri uri) {
+        String desc = "Querying uri " + uri + " results in : \n";
+        Cursor cursor = null;
+        try {
+            cursor = context.getContentResolver().query(uri, null, null, null, null);
+            desc += describeCursor(cursor);
+            return desc;
+        } catch (Exception e) {
+            desc += e.getMessage();
+            return desc;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+    }
+
+    private String describeCursor(Cursor cursor) {
+        //On the first line print the columns names
+        String desc = describeColumns(cursor);
+        desc += describeRows(cursor);
+        return desc;
+    }
+
+    private String describeRows(Cursor cursor) {
+        String desc = "";
+        int i = 0;
+        while (cursor.moveToNext()) {
+            desc += describeRow(cursor);
+            if (i == 10) {//Right now we only want a sample. Not all the table that can be
+                // really big.
+                break;
+            }
+            i++;
+        }
+        return desc;
+    }
+
+    private String describeRow(Cursor cursor) {
+        String desc = "";
+        String[] columnsNames = cursor.getColumnNames();
+        int columnCount = columnsNames.length;
+        int i = 0;
+        for (String columnName : columnsNames) {
+            desc += cursor.getString(cursor.getColumnIndex(columnName));
+            if (i == columnCount - 1) {
+                desc += "\n";
+            } else {
+                desc += "|";
+            }
+            i++;
+        }
+        return desc;
+    }
+
+    private String describeColumns(Cursor cursor) {
+        String desc = "";
+        String[] columnsNames = cursor.getColumnNames();
+        int columnCount = columnsNames.length;
+        int i = 0;
+        for (String columnName : columnsNames) {
+            desc += columnName;
+            if (i == columnCount - 1) {
+                desc += "\n";
+            } else {
+                desc += "|";
+            }
+            i++;
+        }
+        return desc;
     }
 
     private void writeTableOfStringToFile(File providersOverview, String[] strings) {
@@ -166,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
              PrintWriter out = new PrintWriter(bw)) {
             for (String aString : strings) {
                 out.println(aString);
+                out.println("\n");
             }
         } catch (IOException e) {
             //exception handling left as an exercise for the reader

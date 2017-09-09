@@ -1,0 +1,813 @@
+﻿Querying uri content://com.android.calendar results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/calendar_entities results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/calendars results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/attendees results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/event_entities results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/events results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/exception results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/instances/when results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/instances/whenbyday results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/instances/search results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/instances/searchbyday results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/properties results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/instances/groupbyday results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/reminders results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/calendar_alerts results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/calendar_alerts/by_instance results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/colors results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/extendedproperties results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://com.android.calendar/syncstate results in : 
+Permission Denial: opening provider com.android.providers.calendar.CalendarProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALENDAR or android.permission.WRITE_CALENDAR
+
+
+
+
+Querying uri content://call_log results in : 
+Permission Denial: opening provider com.android.providers.contacts.CallLogProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALL_LOG or android.permission.WRITE_CALL_LOG
+
+
+
+
+Querying uri content://call_log/calls results in : 
+Permission Denial: opening provider com.android.providers.contacts.CallLogProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALL_LOG or android.permission.WRITE_CALL_LOG
+
+
+
+
+Querying uri content://call_log/calls/filter results in : 
+Permission Denial: opening provider com.android.providers.contacts.CallLogProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALL_LOG or android.permission.WRITE_CALL_LOG
+
+
+
+
+Querying uri content://call_log/calls?allow_voicemails=true results in : 
+Permission Denial: opening provider com.android.providers.contacts.CallLogProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CALL_LOG or android.permission.WRITE_CALL_LOG
+
+
+
+
+Querying uri content://com.android.contacts results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/directories results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/syncstate results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/profile/syncstate results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/lookup results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/as_vcard results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/as_multi_vcard results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/filter results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/strequent results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/frequent results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/strequent/filter results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/group results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/profile results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/profile/as_vcard results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/profile/raw_contacts results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/deleted_contacts results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/raw_contacts results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/raw_contact_entities results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/profile/raw_contact_entities results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/phone_lookup results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/status_updates results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/profile/status_updates results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/phones results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/phones/filter results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/emails results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/emails/lookup results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/emails/filter results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/postals results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/callables results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/callables/filter results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/contactables results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/contactables/filter results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/groups results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/groups_summary results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/aggregation_exceptions results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/settings results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/data/usagefeedback results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/contacts/delete_usage results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/display_photo results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://com.android.contacts/photo_dimensions results in : 
+Permission Denial: opening provider com.android.providers.contacts.ContactsProvider2 from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
+
+
+
+
+Querying uri content://media/external/images/media results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/images/media from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/images/media results in : 
+_id|_data|_size|_display_name|mime_type|title|date_added|date_modified|description|picasa_id|isprivate|latitude|longitude|datetaken|orientation|mini_thumb_magic|bucket_id|bucket_display_name|width|height|group_id|spherical_mosaic|addr|langagecode|is_secretbox|weather_ID|sef_file_type|reusable|is_drm|is_favorite
+
+
+
+
+
+
+Querying uri content://media/external/images/thumbnails results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/images/thumbnails from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/images/thumbnails results in : 
+_id|_data|image_id|kind|width|height
+
+
+
+
+
+
+Querying uri content://media/external/audio/media results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/audio/media from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/audio/media results in : 
+_id|_data|_display_name|_size|mime_type|date_added|is_drm|date_modified|title|title_key|duration|artist_id|composer|album_id|track|year|is_ringtone|is_music|is_alarm|is_notification|is_podcast|bookmark|album_artist|is_sound|year_name|genre_name|recently_played|most_played|recently_added_remove_flag|is_favorite|bucket_id|bucket_display_name|recordingtype|latitude|longitude|addr|langagecode|is_secretbox|is_memo|label_id|weather_ID|sampling_rate|bit_depth|recorded_number|recording_mode|datetaken|artist_id:1|artist_key|artist|album_id:1|album_key|album
+5|/system/media/audio/alarms/Dawn_chorus.ogg|Dawn_chorus.ogg|459665|application/ogg|1388534524|0|1457424876|Dawn Chorus|        /        )        U        C                 -        7        E        K        Q        M        |28282|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+6|/system/media/audio/alarms/Day_by_day.ogg|Day_by_day.ogg|574190|application/ogg|1388534524|0|1457424876|Day by Day|        /        )        Y                 +        Y                 /        )        Y        |35505|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+7|/system/media/audio/alarms/Morning_flower.ogg|Morning_flower.ogg|455879|application/ogg|1388534524|0|1406429636|Morning Flower|        A        E        K        C        9        C        5                 3        ?        E        U        1        K        |28489|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+9|/system/media/audio/alarms/Sea_breeze.ogg|Sea_breeze.ogg|495894|application/ogg|1388534525|0|1457424876|Sea Breeze|        M        1        )                 +        K        1        1        [        1        |30722|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+10|/system/media/audio/alarms/Serene_morning.ogg|Serene_morning.ogg|372417|application/ogg|1388534525|0|1406429636|Serene Morning|        M        1        K        1        C        1                 A        E        K        C        9        C        5        |22750|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+11|/system/media/audio/alarms/Springtime_memories.ogg|Springtime_memories.ogg|432363|application/ogg|1388534525|0|1406429636|Springtime Memories|        M        G        K        9        C        5        O        9        A        1                 A        1        A        E        K        9        1        M        |26796|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+12|/system/media/audio/alarms/Ticktac.ogg|Ticktac.ogg|26367|application/ogg|1388534525|0|1457424876|Ticktac|        O        9        -        =        O        )        -        |2998|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+13|/system/media/audio/alarms/Walk_in_the_forest.ogg|Walk_in_the_forest.ogg|430273|application/ogg|1388534525|0|1457424876|Walk in the Forest|        U        )        ?        =                 9        C                 O        7        1                 3        E        K        1        M        O        |26791|1|null|1|0|null|0|0|1|0|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-183121033|alarms|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|1|        M        )        A        M        Q        C        5        -183121033|Samsung
+14|/system/media/audio/notifications/Beep_once.ogg|Beep_once.ogg|4814|application/ogg|1388534525|0|1406429636|Beep Once|        +        1        1        G                 E        C        -        1        |1545|1|null|2|0|null|0|0|0|1|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-1608219629|notifications|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|2|        M        )        A        M        Q        C        5        -1608219629|Samsung
+15|/system/media/audio/notifications/Good_Time.ogg|Good_Time.ogg|57476|application/ogg|1388534525|0|1406429636|Good Time|        5        E        E        /                 O        9        A        1        |3490|1|null|2|0|null|0|0|0|1|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-1608219629|notifications|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|2|        M        )        A        M        Q        C        5        -1608219629|Samsung
+16|/system/media/audio/notifications/Harp_glissando.ogg|Harp_glissando.ogg|68145|application/ogg|1388534525|0|1406429636|Harp Glissando|        7        )        K        G                 5        ?        9        M        M        )        C        /        E        |3880|1|null|2|0|null|0|0|0|1|0|null|null|0|<unknown>|<unknown>|0|0|0|0|-1608219629|notifications|-1|null|null|null|null|0|0|0|0|0|0|null|0|null|1|        M        )        A        M        Q        C        5        |Samsung|2|        M        )        A        M        Q        C        5        -1608219629|Samsung
+
+
+
+
+
+
+Querying uri content://media/external/audio/genres results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/audio/genres from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/audio/genres results in : 
+no such table: audio_genres (code 1): , while compiling: SELECT * FROM audio_genres
+#################################################################
+Error Code : 1 (SQLITE_ERROR)
+Caused By : SQL(query) error or missing database.
+        (no such table: audio_genres (code 1): , while compiling: SELECT * FROM audio_genres)
+#################################################################
+#################################################################
+Error Code : 1 (SQLITE_ERROR)
+Caused By : SQL(query) error or missing database.
+        (no such table: audio_genres (code 1): , while compiling: SELECT * FROM audio_genres
+#################################################################
+Error Code : 1 (SQLITE_ERROR)
+Caused By : SQL(query) error or missing database.
+        (no such table: audio_genres (code 1): , while compiling: SELECT * FROM audio_genres)
+#################################################################)
+#################################################################
+
+
+
+
+Querying uri content://media/external/audio/playlists results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/audio/playlists from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/audio/playlists results in : 
+no such table: audio_playlists (code 1): , while compiling: SELECT * FROM audio_playlists WHERE (name <> 'now playing list 0123456789' AND name <> 'FavoriteList#328795!432@1341' )
+#################################################################
+Error Code : 1 (SQLITE_ERROR)
+Caused By : SQL(query) error or missing database.
+        (no such table: audio_playlists (code 1): , while compiling: SELECT * FROM audio_playlists WHERE (name <> 'now playing list 0123456789' AND name <> 'FavoriteList#328795!432@1341' ))
+#################################################################
+#################################################################
+Error Code : 1 (SQLITE_ERROR)
+Caused By : SQL(query) error or missing database.
+        (no such table: audio_playlists (code 1): , while compiling: SELECT * FROM audio_playlists WHERE (name <> 'now playing list 0123456789' AND name <> 'FavoriteList#328795!432@1341' )
+#################################################################
+Error Code : 1 (SQLITE_ERROR)
+Caused By : SQL(query) error or missing database.
+        (no such table: audio_playlists (code 1): , while compiling: SELECT * FROM audio_playlists WHERE (name <> 'now playing list 0123456789' AND name <> 'FavoriteList#328795!432@1341' ))
+#################################################################)
+#################################################################
+
+
+
+
+Querying uri content://media/external/audio/artists results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/audio/artists from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/audio/artists results in : 
+_id|artist|artist_key|number_of_albums|number_of_tracks|album_id
+2|<unknown>| |1|18|6
+3|Copyright 2009 Android Open Source Project|        -        E        G        Y        K        9        5        7        O                                            &                 )        C        /        K        E        9        /                 E        G        1        C                 M        E        Q        K        -        1                 G        K        E        ;        1        -        O        |1|4|6
+4|Dr. Mad|        /        K                 A        )        /        |1|1|6
+1|Samsung|        M        )        A        M        Q        C        5        |2|56|6
+
+
+
+
+
+
+Querying uri content://media/external/audio/albums results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/audio/albums from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/audio/albums results in : 
+_id|album|album_key|minyear|maxyear|artist|artist_id|artist_key|numsongs|album_art
+6|ui|        Q        9        78638153|null|null|<unknown>|2| |70|null
+7|Samsung|        M        )        A        M        Q        C        5        78638153|null|null|Samsung|1|        M        )        A        M        Q        C        5        |9|null
+
+
+
+
+
+
+Querying uri content://media/external/video/media results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/video/media from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/video/media results in : 
+_id|_data|_display_name|_size|mime_type|date_added|date_modified|title|duration|artist|album|resolution|description|isprivate|tags|category|language|mini_thumb_data|latitude|longitude|datetaken|mini_thumb_magic|bucket_id|bucket_display_name|bookmark|width|height|resumePos|isPlayed|addr|langagecode|is_secretbox|weather_ID|is_360_video|recordingtype|recording_mode|type3dvideo|is_drm|is_favorite|video_view_mode|video_codec_info|audio_codec_info
+
+
+
+
+
+
+Querying uri content://media/external/video/thumbnails results in : 
+Permission Denial: reading com.android.providers.media.MediaProvider uri content://media/external/video/thumbnails from pid=1142, uid=10024 requires android.permission.READ_EXTERNAL_STORAGE, or grantUriPermission()
+
+
+
+
+Querying uri content://media/internal/video/thumbnails results in : 
+_id|_data|video_id|kind|width|height
+
+
+
+
+
+
+Querying uri content://settings/system results in : 
+_id|name|value
+1|volume_music|7
+2|volume_ring|11
+3|volume_system|9
+4|volume_voice|4
+5|volume_alarm|11
+6|volume_notification|11
+7|volume_bluetooth_sco|7
+8|volume_music_headset|9
+9|volume_music_headphone|9
+11|mute_streams_affected|46
+13|dim_screen|1
+
+
+
+
+
+
+Querying uri content://settings/system/alarm_alert results in : 
+_id|name|value
+493|alarm_alert|content://media/internal/audio/media/7
+
+
+
+
+
+
+Querying uri content://settings/system/notification_sound results in : 
+_id|name|value
+49754|notification_sound|content://media/internal/audio/media/27
+
+
+
+
+
+
+Querying uri content://settings/system/ringtone results in : 
+_id|name|value
+497|ringtone|content://media/internal/audio/media/58
+
+
+
+
+
+
+Querying uri content://settings/secure results in : 
+_id|name|value
+1|data_roaming2|0
+3|location_pdr_enabled|0
+4|kddi_cpa_on|0
+8|mount_play_not_snd|1
+9|mount_ums_autostart|0
+10|mount_ums_prompt|1
+11|mount_ums_notify_enabled|1
+13|accessibility_web_content_key_bindings|0x13=0x01000100; 0x14=0x01010100; 0x15=0x02000001; 0x16=0x02010001; 0x200000013=0x02000601; 0x200000014=0x02010601; 0x200000015=0x03020101; 0x200000016=0x03010201; 0x200000023=0x02000301; 0x200000024=0x02010301; 0x200000037=0x03070201; 0x200000038=0x03000701:0x03010701:0x03020701;
+14|long_press_timeout|500
+16|speak_password|0
+17|accessibility_script_injection_url|https://ssl.gstatic.com/accessibility/javascript/android/AndroidVox_v1.js
+
+
+
+
+
+
+Querying uri content://settings/global results in : 
+_id|name|value
+2|airplane_mode_radios|cell,bluetooth,wifi,nfc
+3|airplane_mode_toggleable_radios|bluetooth,wifi,nfc
+6|auto_time_zone|1
+8|wifi_sleep_policy|2
+12|wifi_networks_available_notification_on|1
+14|cdma_cell_broadcast_sms|1
+15|data_roaming|0
+18|netstats_enabled|1
+20|usb_mass_storage_enabled|1
+21|wifi_max_dhcp_retry_count|9
+23|lock_sound|/system/media/audio/ui/Lock.ogg
+
+
+
+
+
+
+Querying uri content://sms results in : 
+Permission Denial: opening provider com.android.providers.telephony.SmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://sms/inbox results in : 
+Permission Denial: opening provider com.android.providers.telephony.SmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://sms/sent results in : 
+Permission Denial: opening provider com.android.providers.telephony.SmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://sms/draft results in : 
+Permission Denial: opening provider com.android.providers.telephony.SmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://sms/outbox results in : 
+Permission Denial: opening provider com.android.providers.telephony.SmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://sms/conversations results in : 
+Permission Denial: opening provider com.android.providers.telephony.SmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/conversations results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/conversations/obsolete results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms/report-request results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms/report-status results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms/inbox results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms/sent results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms/drafts results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms/outbox results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms/rate results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/ results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/conversations results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/messages/byphone results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/undelivered results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/draft results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/locked results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/search results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://mms-sms/pending results in : 
+Permission Denial: opening provider com.android.providers.telephony.MmsSmsProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_SMS or android.permission.WRITE_SMS
+
+
+
+
+Querying uri content://telephony/carriers results in : 
+No permission to write APN settings
+
+
+
+
+Querying uri content://user_dictionary results in : 
+Permission Denial: opening provider com.android.providers.userdictionary.UserDictionaryProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_USER_DICTIONARY or android.permission.WRITE_USER_DICTIONARY
+
+
+
+
+Querying uri content://user_dictionary/words results in : 
+Permission Denial: opening provider com.android.providers.userdictionary.UserDictionaryProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires android.permission.READ_USER_DICTIONARY or android.permission.WRITE_USER_DICTIONARY
+
+
+
+
+Querying uri content://com.android.voicemail/voicemail results in : 
+Permission Denial: opening provider com.android.providers.contacts.VoicemailContentProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires com.android.voicemail.permission.ADD_VOICEMAIL or com.android.voicemail.permission.ADD_VOICEMAIL
+
+
+
+
+Querying uri content://com.android.voicemail/status results in : 
+Permission Denial: opening provider com.android.providers.contacts.VoicemailContentProvider from ProcessRecord{1bd3651e 1142:com.elorri.android.querybuiltincontentproviders/u0a24} (pid=1142, uid=10024) requires com.android.voicemail.permission.ADD_VOICEMAIL or com.android.voicemail.permission.ADD_VOICEMAIL
