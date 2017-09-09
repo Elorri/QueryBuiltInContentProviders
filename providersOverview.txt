@@ -306,7 +306,9 @@ Caused By : unknown error (code 0): Unable to convert BLOB to string
 
 
 Querying uri content://com.android.contacts/profile/syncstate results in : 
-Neither user 10024 nor current process has android.permission.READ_PROFILE.
+_id|account_name|account_type|data
+
+
 
 
 
@@ -407,19 +409,28 @@ URI: content://com.android.contacts/contacts/group, calling user: com.elorri.and
 
 
 Querying uri content://com.android.contacts/profile results in : 
-Neither user 10024 nor current process has android.permission.READ_PROFILE.
+sort_key|link|photo_uri|send_to_voicemail|contact_status|contact_status_label|pinned|link_type1|display_name|sec_custom_alert|display_name_reverse|phonebook_label_alt|phonebook_bucket|sec_custom_vibration|contact_status_res_package|in_default_directory|photo_id|custom_ringtone|_id|times_contacted|link_count|phonebook_label|display_name_alt|lookup|phonetic_name|has_email|last_time_contacted|contact_last_updated_timestamp|has_phone_number|in_visible_group|display_name_source|photo_file_id|is_user_profile|contact_status_ts|sort_key_alt|phonebook_bucket_alt|contact_presence|starred|photo_thumb_uri|contact_status_icon|contact_chat_capability|is_private|dirty_contact|phonetic_name_style|name_raw_contact_id
+Elorri Etchemendy|1|null|0|null|null|0|vnd.sec.contact.phone|Elorri Etchemendy|null|Etchemendy, Elorri|E|5|null|null|1|null|null|9223372034707292161|0|1|E|Etchemendy, Elorri|profile|null|0|0|1504880183406|1|1|40|null|1|null|Etchemendy, Elorri|5|null|0|null|null|null|0|0|0|9223372034707292161
+
+
 
 
 
 
 Querying uri content://com.android.contacts/profile/as_vcard results in : 
-Neither user 10024 nor current process has android.permission.READ_PROFILE.
+_display_name_reverse|_display_name|_size|_id
+Etchemendy, Elorri.vcf|Elorri Etchemendy.vcf|null|9223372034707292161
+
+
 
 
 
 
 Querying uri content://com.android.contacts/profile/raw_contacts results in : 
-Neither user 10024 nor current process has android.permission.READ_PROFILE.
+sort_key|send_to_voicemail|name_verified|pinned|sec_custom_alert|display_name|display_name_reverse|phonebook_label_alt|version|sec_custom_vibration|phonebook_bucket|custom_ringtone|_id|times_contacted|account_type_and_data_set|sync4|dirty|sync2|raw_contact_is_user_profile|contact_id|aggregation_mode|creation_time|data_set|phonebook_label|account_type|sync3|display_name_alt|phonetic_name|last_time_contacted|display_name_source|phonebook_bucket_alt|sort_key_alt|starred|deleted|account_name|is_private|sync1|sourceid|phonetic_name_style
+Elorri Etchemendy|0|0|0|null|Elorri Etchemendy|Etchemendy, Elorri|E|1268|null|5|null|9223372034707292161|0|vnd.sec.contact.phone|null|1|null|1|9223372034707292161|0|1504880183412|null|E|vnd.sec.contact.phone|null|Etchemendy, Elorri|null|null|40|5|Etchemendy, Elorri|0|0|vnd.sec.contact.phone|0|null|null|0
+
+
 
 
 
@@ -501,7 +512,13 @@ null|0|null|Amaia|vnd.android.cursor.item/name|null|12|null|null|vnd.sec.contact
 
 
 Querying uri content://com.android.contacts/profile/raw_contact_entities results in : 
-Neither user 10024 nor current process has android.permission.READ_PROFILE.
+group_alert|name_verified|sec_custom_alert|display_name|mimetype|data6|version|data3|custom_ringtone|account_type_and_data_set|group_ringtone|data7|data15|sync4|dirty|sync2|raw_contact_is_user_profile|data_set|data10|res_package|data11|account_type|data_id|sync3|data13|data9|data_sync1|is_restricted|data_version|is_private|group_dormant|data4|data12|display_name_reverse|data1|sec_custom_vibration|data_sync2|_id|is_super_primary|data5|contact_id|data8|is_primary|group_vibration|creation_time|data_sync4|data_sync3|data14|title|data2|group_sourceid|starred|deleted|account_name|sync1|sourceid
+null|0|null|Elorri Etchemendy|vnd.android.cursor.item/name|null|1268|Etchemendy|null|vnd.sec.contact.phone|null|null|null|null|1|null|1|null|1|null|0|vnd.sec.contact.phone|9223372034707292161|null|null|null|null|0|0|0|null|null|null|Etchemendy, Elorri|Elorri Etchemendy|null|null|9223372034707292161|0|null|9223372034707292161|null|0|null|1504880183412|null|null|null|null|Elorri|null|0|0|vnd.sec.contact.phone|null|null
+null|0|null|Elorri Etchemendy|vnd.android.cursor.item/phone_v2|null|1268|null|null|vnd.sec.contact.phone|null|null|null|null|1|null|1|null|null|null|null|vnd.sec.contact.phone|9223372034707292162|null|null|null|null|0|1263|0|null|+33668710898|6ca7dc7ab8ca78c8|Etchemendy, Elorri|+33 6 68 71 08 98|null|null|9223372034707292161|1|null|9223372034707292161|null|1|null|1504880183412|null|null|null|null|2|null|0|0|vnd.sec.contact.phone|null|null
+null|0|null|Elorri Etchemendy|vnd.android.cursor.item/contact_event|null|1268|Courrir|null|vnd.sec.contact.phone|null|null|null|null|1|null|1|null|null|null|null|vnd.sec.contact.phone|9223372034707292174|null|null|null|null|0|0|0|null|null|null|Etchemendy, Elorri|2016-04-22|null|null|9223372034707292161|0|null|9223372034707292161|null|0|null|1504880183412|null|null|null|null|0|null|0|0|vnd.sec.contact.phone|null|null
+null|0|null|Elorri Etchemendy|vnd.android.cursor.item/note|null|1268|null|null|vnd.sec.contact.phone|null|null|null|null|1|null|1|null|null|null|null|vnd.sec.contact.phone|9223372034707292175|null|null|null|null|0|0|0|null|null|null|Etchemendy, Elorri|Auberges|null|null|9223372034707292161|0|null|9223372034707292161|null|0|null|1504880183412|null|null|null|null|null|null|0|0|vnd.sec.contact.phone|null|null
+
+
 
 
 
@@ -532,7 +549,13 @@ null|null|11|null|null|null|null|null|null|null|null|null|null
 
 
 Querying uri content://com.android.contacts/profile/status_updates results in : 
-Neither user 10024 nor current process has android.permission.READ_PROFILE.
+chat_capability|protocol|presence_data_id|status_icon|status|mode|im_account|status_label|status_res_package|status_ts|custom_protocol|im_handle|presence_raw_contact_id
+null|null|9223372034707292161|null|null|null|null|null|null|null|null|null|null
+null|null|9223372034707292162|null|null|null|null|null|null|null|null|null|null
+null|null|9223372034707292174|null|null|null|null|null|null|null|null|null|null
+null|null|9223372034707292175|null|null|null|null|null|null|null|null|null|null
+
+
 
 
 
