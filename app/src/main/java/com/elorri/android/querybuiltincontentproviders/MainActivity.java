@@ -38,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
         String desc = "Querying uri " + uri[0] + " - " + uri[1] + " results in : \n";
         Cursor cursor = null;
         try {
+            String[] projection=new String[]{ContactsContract.RawContacts._ID,
+                    ContactsContract.RawContacts.CONTACT_ID,
+                    ContactsContract.RawContacts.DISPLAY_NAME_PRIMARY,
+                    ContactsContract.RawContacts.ACCOUNT_TYPE,
+                    ContactsContract.RawContacts.ACCOUNT_NAME};
             cursor = context.getContentResolver().query((Uri) uri[1],
-                    new String[]{ContactsContract.RawContacts._ID,
-                            ContactsContract.RawContacts.CONTACT_ID,
-                            ContactsContract.RawContacts.DISPLAY_NAME_PRIMARY,
-                            ContactsContract.RawContacts.ACCOUNT_TYPE,
-                            ContactsContract.RawContacts.ACCOUNT_NAME},
+                    null,
                     ContactsContract.RawContacts.CONTACT_ID + " = ?",
                     new String[]{contactId},
                     ContactsContract.RawContacts.CONTACT_ID + " asc");

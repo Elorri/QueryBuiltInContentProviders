@@ -1435,12 +1435,11 @@ _id|lookup|display_name
 
 
 Querying uri ContactsContract.Contacts.CONTENT_URI - content://com.android.contacts/raw_contacts results in : 
-_id|contact_id|display_name|account_type|account_name
-14080|14260|1ContactPeriphA|vnd.sec.contact.phone|vnd.sec.contact.phone
-14081|14260|1ContactPériphB|vnd.sec.contact.phone|vnd.sec.contact.phone
-14082|14260|1ContactSimA|vnd.sec.contact.sim|primary.sim.account_name
-14083|14260|1ContactSimB|vnd.sec.contact.sim|primary.sim.account_name
-14084|14260|1ContactGoogleA|com.google|etchemendy.elorri@gmail.com
-14085|14260|1ContactGoogleB|com.google|etchemendy.elorri@gmail.com
-Index 6 requested, with a size of 6
->>>>>>> Select related Rawcontacts
+sort_key|send_to_voicemail|pinned|sec_custom_alert|display_name|display_name_reverse|phonebook_label_alt|version|sec_custom_vibration|phonebook_bucket|custom_ringtone|_id|times_contacted|account_type_and_data_set|sync4|dirty|sync2|raw_contact_is_user_profile|contact_id|aggregation_mode|creation_time|data_set|sec_recently|phonebook_label|account_type|sync3|display_name_alt|phonetic_name|sec_led|last_time_contacted|display_name_source|backup_id|phonebook_bucket_alt|sort_key_alt|starred|deleted|account_name|is_private|sync1|sourceid|phonetic_name_style
+1ContactPeriphA|0|0|null|1ContactPeriphA|1ContactPeriphA|#|2|null|348|null|14080|0|vnd.sec.contact.phone|null|1|null|0|14260|0|0|null|1|#|vnd.sec.contact.phone|null|1ContactPeriphA|null|null|null|40|null|348|1ContactPeriphA|0|0|vnd.sec.contact.phone|0|null|null|0
+1ContactPériphB|0|0|null|1ContactPériphB|1ContactPériphB|#|2|null|348|null|14081|0|vnd.sec.contact.phone|null|1|null|0|14260|0|0|null|1|#|vnd.sec.contact.phone|null|1ContactPériphB|null|null|null|40|null|348|1ContactPériphB|0|0|vnd.sec.contact.phone|0|null|null|0
+1ContactSimA|0|0|null|1ContactSimA|1ContactSimA|#|2|null|348|null|14082|0|vnd.sec.contact.sim|null|1|null|0|14260|0|0|null|1|#|vnd.sec.contact.sim|null|1ContactSimA|null|null|null|40|null|348|1ContactSimA|0|0|primary.sim.account_name|0|null|76|0
+1ContactSimB|0|0|null|1ContactSimB|1ContactSimB|#|2|null|348|null|14083|0|vnd.sec.contact.sim|null|1|null|0|14260|0|0|null|1|#|vnd.sec.contact.sim|null|1ContactSimB|null|null|null|40|null|348|1ContactSimB|0|0|primary.sim.account_name|0|null|83|0
+1ContactGoogleA|0|0|null|1ContactGoogleA|1ContactGoogleA|#|6|null|348|null|14084|0|com.google|null|0|"R3Y_fzVSLi17ImA9XBZVEEsDRQQ."|0|14260|0|1506069205574|null|1|#|com.google|2017-09-22T08:33:26.847Z|1ContactGoogleA|null|null|null|40|null|348|1ContactGoogleA|0|0|etchemendy.elorri@gmail.com|0|https://www.google.com/m8/feeds/contacts/etchemendy.elorri%40gmail.com/base2_property-android_linksto-gprofiles_highresphotos/4df090d0cbc1b9e|4df090d0cbc1b9e|0
+1ContactGoogleB|0|0|null|1ContactGoogleB|1ContactGoogleB|#|6|null|348|null|14085|0|com.google|null|0|"RnwycDVSLi17ImA9XBZVEEsDRQY."|0|14260|0|1506069225712|null|1|#|com.google|2017-09-22T08:33:47.298Z|1ContactGoogleB|null|null|null|40|null|348|1ContactGoogleB|0|0|etchemendy.elorri@gmail.com|0|https://www.google.com/m8/feeds/contacts/etchemendy.elorri%40gmail.com/base2_property-android_linksto-gprofiles_highresphotos/6dbbf43589e803e3|6dbbf43589e803e3|0
+Index 6 requested, with a size of 6>>>>>>> Select related Rawcontacts
