@@ -1414,6 +1414,7 @@ URI: content://com.android.voicemail/status
 =======
 ﻿Querying uri ContactsContract.Contacts.CONTENT_URI - content://com.android.contacts/contacts results in : 
 _id|lookup|display_name
+<<<<<<< f330c46f84f7cfa983b877a813e6981ef1677428
 14264|3552i4df090d0cbc1b9e|1ContactGoogleA
 14265|3552i6dbbf43589e803e3|1ContactGoogleB
 14260|0r14080-142D45434F292D4F47314B39473729|1ContactPeriphA
@@ -1421,3 +1422,6 @@ _id|lookup|display_name
 14262|298i76|1ContactSimA
 14263|298i83|1ContactSimB
 >>>>>>> Select manually added contact on sim, periph and google
+=======
+14260|0r14080-142D45434F292D4F47314B39473729.0r14081-142D45434F292D4F47314B3947372B.298i76.298i83.3552i4df090d0cbc1b9e.3552i6dbbf43589e803e3|1ContactPériphB
+>>>>>>> Associate contacts on phone and run it again
