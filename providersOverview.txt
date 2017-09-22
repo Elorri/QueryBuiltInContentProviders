@@ -1,3 +1,4 @@
+<<<<<<< 781b55176886714864faa92efdd9286262c36299
 ﻿Querying uri CalendarContract.CONTENT_URI - content://com.android.calendar results in : 
 Unknown URL content://com.android.calendar
 
@@ -1410,3 +1411,13 @@ Querying uri VoicemailContract.Status.CONTENT_URI - content://com.android.voicem
 Provider com.elorri.android.querybuiltincontentproviders does not have com.android.voicemail.permission.WRITE_VOICEMAIL permission.
 Please set query parameter 'source_package' in the URI.
 URI: content://com.android.voicemail/status
+=======
+﻿Querying uri ContactsContract.Contacts.CONTENT_URI - content://com.android.contacts/contacts results in : 
+_id|lookup|display_name
+14264|3552i4df090d0cbc1b9e|1ContactGoogleA
+14265|3552i6dbbf43589e803e3|1ContactGoogleB
+14260|0r14080-142D45434F292D4F47314B39473729|1ContactPeriphA
+14261|0r14081-142D45434F292D4F47314B3947372B|1ContactPériphB
+14262|298i76|1ContactSimA
+14263|298i83|1ContactSimB
+>>>>>>> Select manually added contact on sim, periph and google
