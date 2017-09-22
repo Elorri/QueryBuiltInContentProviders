@@ -30,8 +30,55 @@ public class MainActivity extends AppCompatActivity {
                 new Object[]{"ContactsContract.Contacts.CONTENT_URI", ContactsContract.Contacts.CONTENT_URI});
         String rawContacts = gettingTheMergeRawContacts(
                 new Object[]{"ContactsContract.Contacts.CONTENT_URI", ContactsContract.RawContacts.CONTENT_URI}, contact[0]);
+        String rawContactsData = gettingTheMergeRawContactsData(
+                new Object[]{"ContactsContract.Data.CONTENT_URI", ContactsContract.Data.CONTENT_URI}, contact[0]);
 
-        writeTableOfStringToFile(providersOverview, new String[]{contact[1], rawContacts});
+
+        writeTableOfStringToFile(providersOverview, new String[]{contact[1], rawContacts, rawContactsData});
+    }
+
+    private String gettingTheMergeRawContactsData(Object[] uri, String contactId) {
+        String desc = "Querying uri " + uri[0] + " - " + uri[1] + " results in : \n";
+        Cursor cursor = null;
+        try {
+            String[] projection=new String[]{ContactsContract.Data._ID,
+                    ContactsContract.Data.CONTACT_ID,
+                    ContactsContract.Data.RAW_CONTACT_ID,
+                    ContactsContract.Data.LOOKUP_KEY,
+                    ContactsContract.Data.DISPLAY_NAME,
+                    ContactsContract.RawContacts.ACCOUNT_TYPE,
+                    ContactsContract.RawContacts.ACCOUNT_NAME,
+                    ContactsContract.Data.MIMETYPE,
+                    ContactsContract.Data.DATA1,
+                    ContactsContract.Data.DATA2,
+                    ContactsContract.Data.DATA3,
+                    ContactsContract.Data.DATA4,
+                    ContactsContract.Data.DATA5,
+                    ContactsContract.Data.DATA6,
+                    ContactsContract.Data.DATA7,
+                    ContactsContract.Data.DATA8,
+                    ContactsContract.Data.DATA9,
+                    ContactsContract.Data.DATA10,
+                    ContactsContract.Data.DATA11,
+                    ContactsContract.Data.DATA12,
+                    ContactsContract.Data.DATA13,
+                    ContactsContract.Data.DATA14,
+                    ContactsContract.Data.DATA15};
+            cursor = context.getContentResolver().query((Uri) uri[1],
+                    projection,
+                    ContactsContract.Data.CONTACT_ID + " = ?",
+                    new String[]{contactId},
+                    ContactsContract.Data.CONTACT_ID + " asc");
+            desc += describeCursor(cursor);
+            return desc;
+        } catch (Exception e) {
+            desc += e.getMessage();
+            return desc;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
     }
 
     private String gettingTheMergeRawContacts(Object[] uri, String contactId) {
@@ -44,12 +91,12 @@ public class MainActivity extends AppCompatActivity {
                     ContactsContract.RawContacts.ACCOUNT_TYPE,
                     ContactsContract.RawContacts.ACCOUNT_NAME};
             cursor = context.getContentResolver().query((Uri) uri[1],
-                    null,
+                    projection,
                     ContactsContract.RawContacts.CONTACT_ID + " = ?",
                     new String[]{contactId},
                     ContactsContract.RawContacts.CONTACT_ID + " asc");
             desc += describeCursor(cursor);
-            return cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
+            return desc;
         } catch (Exception e) {
             desc += e.getMessage();
             return desc;
