@@ -1414,6 +1414,7 @@ URI: content://com.android.voicemail/status
 =======
 ﻿Querying uri ContactsContract.Contacts.CONTENT_URI - content://com.android.contacts/contacts results in : 
 _id|lookup|display_name
+<<<<<<< 5c70b1406893a20ef0cc0bd2644d5b1a7dc9ca73
 <<<<<<< f330c46f84f7cfa983b877a813e6981ef1677428
 14264|3552i4df090d0cbc1b9e|1ContactGoogleA
 14265|3552i6dbbf43589e803e3|1ContactGoogleB
@@ -1425,3 +1426,21 @@ _id|lookup|display_name
 =======
 14260|0r14080-142D45434F292D4F47314B39473729.0r14081-142D45434F292D4F47314B3947372B.298i76.298i83.3552i4df090d0cbc1b9e.3552i6dbbf43589e803e3|1ContactPériphB
 >>>>>>> Associate contacts on phone and run it again
+=======
+14260|0r14080-142D45434F292D4F47314B39473729.0r14081-142D45434F292D4F47314B3947372B.298i76.298i83.3552i4df090d0cbc1b9e.3552i6dbbf43589e803e3|1ContactPériphB
+
+
+
+
+
+
+Querying uri ContactsContract.Contacts.CONTENT_URI - content://com.android.contacts/raw_contacts results in : 
+_id|contact_id|display_name|account_type|account_name
+14080|14260|1ContactPeriphA|vnd.sec.contact.phone|vnd.sec.contact.phone
+14081|14260|1ContactPériphB|vnd.sec.contact.phone|vnd.sec.contact.phone
+14082|14260|1ContactSimA|vnd.sec.contact.sim|primary.sim.account_name
+14083|14260|1ContactSimB|vnd.sec.contact.sim|primary.sim.account_name
+14084|14260|1ContactGoogleA|com.google|etchemendy.elorri@gmail.com
+14085|14260|1ContactGoogleB|com.google|etchemendy.elorri@gmail.com
+Index 6 requested, with a size of 6
+>>>>>>> Select related Rawcontacts

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity {
-
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +25,42 @@ public class MainActivity extends AppCompatActivity {
         // not expandable in size. I will write to external storage to be sure I can access the
         // file from my phone and send it on drop box or via email.
         File providersOverview = getFileToWriteIn();
-        Context context=getBaseContext();
-        String contacts = queryingContactSample(
-                context, new Object[]{"ContactsContract.Contacts.CONTENT_URI", ContactsContract.Contacts.CONTENT_URI});
-        String contacts = queryingContactSample(
-                context, new Object[]{"ContactsContract.Contacts.CONTENT_URI", ContactsContract.Contacts.CONTENT_URI});
-        writeTableOfStringToFile(providersOverview, new String[]{contacts});
+        context = getBaseContext();
+        String[] contact = gettingTheMergeContact(
+                new Object[]{"ContactsContract.Contacts.CONTENT_URI", ContactsContract.Contacts.CONTENT_URI});
+        String rawContacts = gettingTheMergeRawContacts(
+                new Object[]{"ContactsContract.Contacts.CONTENT_URI", ContactsContract.RawContacts.CONTENT_URI}, contact[0]);
+
+        writeTableOfStringToFile(providersOverview, new String[]{contact[1], rawContacts});
+    }
+
+    private String gettingTheMergeRawContacts(Object[] uri, String contactId) {
+        String desc = "Querying uri " + uri[0] + " - " + uri[1] + " results in : \n";
+        Cursor cursor = null;
+        try {
+            cursor = context.getContentResolver().query((Uri) uri[1],
+                    new String[]{ContactsContract.RawContacts._ID,
+                            ContactsContract.RawContacts.CONTACT_ID,
+                            ContactsContract.RawContacts.DISPLAY_NAME_PRIMARY,
+                            ContactsContract.RawContacts.ACCOUNT_TYPE,
+                            ContactsContract.RawContacts.ACCOUNT_NAME},
+                    ContactsContract.RawContacts.CONTACT_ID + " = ?",
+                    new String[]{contactId},
+                    ContactsContract.RawContacts.CONTACT_ID + " asc");
+            desc += describeCursor(cursor);
+            return cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
+        } catch (Exception e) {
+            desc += e.getMessage();
+            return desc;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
     }
 
 
-    private String queryingContactSample(Context context, Object[] uri) {
+    private String[] gettingTheMergeContact(Object[] uri) {
         String desc = "Querying uri " + uri[0] + " - " + uri[1] + " results in : \n";
         Cursor cursor = null;
         try {
@@ -46,10 +72,12 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{"1Contact%"},
                     ContactsContract.Contacts.DISPLAY_NAME + " asc");
             desc += describeCursor(cursor);
-            return desc;
+            cursor.moveToFirst();
+            return new String[]{
+                    cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID)), desc};
         } catch (Exception e) {
             desc += e.getMessage();
-            return desc;
+            return new String[]{desc};
         } finally {
             if (cursor != null) {
                 cursor.close();
