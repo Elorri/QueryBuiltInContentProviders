@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -22,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
     Context mContext;
     private DbHelper openHelper;
     private SQLiteDatabase db;
-    private boolean writePermission;
-
-    private String mRawContactId;
-    private Cursor mCursorWithRawContactIdInfos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
      * @param accountName for sync.
      */
     private void preparePushContactsTo(String accountType, String accountName) {
-        String contactId = gettingTheMergeContactId("1 Contact%");
+        String contactId = gettingTheMergeContactId("1Contact%");
         preparePushContactTo(contactId, accountType, accountName);
     }
 
@@ -118,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         while (rawContactsGivenForSync.moveToNext()) {
             String rawContactIdGivenForSync = rawContactsGivenForSync.getString
                     (rawContactsGivenForSync
-                    .getColumnIndex(ContactsContract.RawContacts._ID));
+                            .getColumnIndex(ContactsContract.RawContacts._ID));
             ops.add(ContentProviderOperation.newDelete(
                     ContactsContract.RawContacts.CONTENT_URI)
                     .withSelection(ContactsContract.RawContacts._ID + " = ?", new String[]{rawContactIdGivenForSync})
@@ -134,15 +131,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void completeRawContactGivenForSync(String rawContactId, Cursor cursorWithRawContactInfos) {
-
-//        if (!writePermission) {
-//            mRawContactId = rawContactId;
-//            mCursorWithRawContactIdInfos = cursorWithRawContactInfos;
-//            PlatformUtils.checkAndAskForPermission(this, Manifest.permission.WRITE_CONTACTS);
-//            //After this point you wait for callback in onRequestPermissionsResult
-//            return;
-//        }
-
         ArrayList<ContentProviderOperation> ops = new ArrayList<>();
 
         while (cursorWithRawContactInfos.moveToNext()) {
@@ -220,14 +208,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == PlatformUtils.PERMISSIONS_REQUEST_WRITE_CONTACTS) {
-//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//            writePermission = true;
-//            completeRawContactGivenForSync(mRawContactId, mCursorWithRawContactIdInfos);
-//            } else {
-//                Toast.makeText(this, "Until you grant the permission, we cannot proceed", Toast.LENGTH_SHORT).show();
-//            }
-        }
+        Log.i("Log", "requestCode" + requestCode);
     }
 
     private Cursor distinctTable(String name) {
