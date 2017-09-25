@@ -1,3 +1,5 @@
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">QueryBuiltInContentProviders</string>
+    <string name="today" translatable="true">Today</string>
+    <string name="completed" translatable="true"><xliff:g>%1$s</xliff:g> at <xliff:g>%2$s</xliff:g></string>
 </resources>

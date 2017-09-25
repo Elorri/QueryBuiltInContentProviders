@@ -1,14 +1,16 @@
 package com.elorri.android.querybuiltincontentproviders;
 
+
+import android.Manifest;
 import android.content.ContentProviderOperation;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -17,30 +19,171 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.TimeZone;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    Context mContext;
+    private Context mContext;
     private DbHelper openHelper;
     private SQLiteDatabase db;
+
+
+    private String mCalendarName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         mContext = getApplicationContext();
         openHelper = new DbHelper(mContext);
         db = openHelper.getWritableDatabase();
 
-        //Since it is impossible to write into assets files because apk are packed and therefore
-        // not expandable in size. I will write to external storage to be sure I can access the
-        // file from my phone and send it on drop box or via email.
-        File providersOverview = getFileToWriteIn();
-        mContext = getBaseContext();
+        //I'm following tutorial here part "Adding Events"
+        //https://developer.android.com/guide/topics/providers/calendar-provider.html
+        String calendarId = selectIdCalendar("Business");
+        long dtstart = DateUtils.todayStart();
+        long dtend = DateUtils.addHours(1, dtstart);
+        String eventTimeZone = TimeZone.getDefault().getID();
+        insertEvent("Audiensiel call", "Workout", calendarId, dtstart, dtend, eventTimeZone);
 
-        preparePushContactsTo("com.google", "etchemendy.elorri@gmail.com");
+//        //Merge all raw contact into the google raw contact that will sync
+//        preparePushContactsTo("com.google", "etchemendy.elorri@gmail.com");
 
-        //writeTableOfStringToFile(providersOverview, new String[]{contactId, rawContacts[1], rawContactsData});
+//        //Since it is impossible to write into assets files because apk are packed and therefore
+//        // not expandable in size. I will write to external storage to be sure I can access the
+//        // file from my phone and send it on drop box or via email.
+//        File providersOverview = getFileToWriteIn();
+//
+//        //List of android builtin content providers static uris that can be queried.
+//        //Dynamics uris have been listed here and therefore some provider don't show up (eg
+//        // DocumentProvider because it uses only dynamic uris).
+//        Object[][] builtInUris = new Object[][]{
+//                {"CalendarContract.CONTENT_URI", CalendarContract.CONTENT_URI},
+//                {"CalendarContract.CalendarEntity.CONTENT_URI", CalendarContract.CalendarEntity.CONTENT_URI},
+//                {"CalendarContract.Calendars.CONTENT_URI", CalendarContract.Calendars.CONTENT_URI},
+//                {"CalendarContract.Attendees.CONTENT_URI", CalendarContract.Attendees.CONTENT_URI},
+//                {"CalendarContract.EventsEntity.CONTENT_URI", CalendarContract.EventsEntity.CONTENT_URI},
+//                {"CalendarContract.Events.CONTENT_URI", CalendarContract.Events.CONTENT_URI},
+//                {"CalendarContract.Events.CONTENT_EXCEPTION_URI", CalendarContract.Events.CONTENT_EXCEPTION_URI},
+//                {"CalendarContract.Instances.CONTENT_URI", CalendarContract.Instances.CONTENT_URI},
+//                {"CalendarContract.Instances.CONTENT_BY_DAY_URI", CalendarContract.Instances.CONTENT_BY_DAY_URI},
+//                {"CalendarContract.Instances.CONTENT_SEARCH_URI", CalendarContract.Instances.CONTENT_SEARCH_URI},
+//                {"CalendarContract.Instances.CONTENT_SEARCH_BY_DAY_URI", CalendarContract.Instances.CONTENT_SEARCH_BY_DAY_URI},
+//                {"CalendarContract.CalendarCache.URI", CalendarContract.CalendarCache.URI},
+//                {"CalendarContract.EventDays.CONTENT_URI", CalendarContract.EventDays.CONTENT_URI},
+//                {"CalendarContract.Reminders.CONTENT_URI", CalendarContract.Reminders.CONTENT_URI},
+//                {"CalendarContract.CalendarAlerts.CONTENT_URI", CalendarContract.CalendarAlerts.CONTENT_URI},
+//                {"CalendarContract.CalendarAlerts.CONTENT_URI_BY_INSTANCE", CalendarContract.CalendarAlerts.CONTENT_URI_BY_INSTANCE},
+//                {"CalendarContract.Colors.CONTENT_URI", CalendarContract.Colors.CONTENT_URI},
+//                {"CalendarContract.ExtendedProperties.CONTENT_URI", CalendarContract.ExtendedProperties.CONTENT_URI},
+//                {"CalendarContract.SyncState.CONTENT_URI", CalendarContract.SyncState.CONTENT_URI},
+//                {"CallLog.CONTENT_URI", CallLog.CONTENT_URI},
+//                {"CallLog.Calls.CONTENT_URI", CallLog.Calls.CONTENT_URI},
+//                {"CallLog.Calls.CONTENT_FILTER_URI", CallLog.Calls.CONTENT_FILTER_URI},
+//                {"CallLog.Calls.CONTENT_URI_WITH_VOICEMAIL", CallLog.Calls.CONTENT_URI_WITH_VOICEMAIL},
+//                {"ContactsContract.AUTHORITY_URI", ContactsContract.AUTHORITY_URI},
+//                {"ContactsContract.Directory.CONTENT_URI", ContactsContract.Directory.CONTENT_URI},
+//                {"ContactsContract.SyncState.CONTENT_URI", ContactsContract.SyncState.CONTENT_URI},
+//                {"ContactsContract.ProfileSyncState.CONTENT_URI", ContactsContract.ProfileSyncState.CONTENT_URI},
+//                {"ContactsContract.Contacts.CONTENT_URI", ContactsContract.Contacts.CONTENT_URI},
+//                {"ContactsContract.Contacts.CONTENT_LOOKUP_URI", ContactsContract.Contacts.CONTENT_LOOKUP_URI},
+//                {"ContactsContract.Contacts.CONTENT_VCARD_URI", ContactsContract.Contacts.CONTENT_VCARD_URI},
+//                {"ContactsContract.Contacts.CONTENT_MULTI_VCARD_URI", ContactsContract.Contacts.CONTENT_MULTI_VCARD_URI},
+//                {"ContactsContract.Contacts.CONTENT_FILTER_URI", ContactsContract.Contacts.CONTENT_FILTER_URI},
+//                {"ContactsContract.Contacts.CONTENT_STREQUENT_URI", ContactsContract.Contacts.CONTENT_STREQUENT_URI},
+//                {"ContactsContract.Contacts.CONTENT_FREQUENT_URI", ContactsContract.Contacts.CONTENT_FREQUENT_URI},
+//                {"ContactsContract.Contacts.CONTENT_STREQUENT_FILTER_URI", ContactsContract.Contacts.CONTENT_STREQUENT_FILTER_URI},
+//                {"ContactsContract.Contacts.CONTENT_GROUP_URI", ContactsContract.Contacts.CONTENT_GROUP_URI},
+//                {"ContactsContract.Profile.CONTENT_URI", ContactsContract.Profile.CONTENT_URI},
+//                {"ContactsContract.Profile.CONTENT_VCARD_URI", ContactsContract.Profile.CONTENT_VCARD_URI},
+//                {"ContactsContract.Profile.CONTENT_RAW_CONTACTS_URI", ContactsContract.Profile.CONTENT_RAW_CONTACTS_URI},
+//                {"ContactsContract.DeletedContacts.CONTENT_URI", ContactsContract.DeletedContacts.CONTENT_URI},
+//                {"ContactsContract.RawContacts.CONTENT_URI", ContactsContract.RawContacts.CONTENT_URI},
+//                {"ContactsContract.Data.CONTENT_URI", ContactsContract.Data.CONTENT_URI},
+//                {"ContactsContract.RawContactsEntity.CONTENT_URI", ContactsContract.RawContactsEntity.CONTENT_URI},
+//                {"ContactsContract.RawContactsEntity.PROFILE_CONTENT_URI", ContactsContract.RawContactsEntity.PROFILE_CONTENT_URI},
+//                {"ContactsContract.PhoneLookup.CONTENT_FILTER_URI", ContactsContract.PhoneLookup.CONTENT_FILTER_URI},
+//                {"ContactsContract.StatusUpdates.CONTENT_URI", ContactsContract.StatusUpdates.CONTENT_URI},
+//                {"ContactsContract.StatusUpdates.PROFILE_CONTENT_URI", ContactsContract.StatusUpdates.PROFILE_CONTENT_URI},
+//                {"ContactsContract.CommonDataKinds.Phone.CONTENT_URI", ContactsContract.CommonDataKinds.Phone.CONTENT_URI},
+//                {"ContactsContract.CommonDataKinds.Phone.CONTENT_FILTER_URI", ContactsContract.CommonDataKinds.Phone.CONTENT_FILTER_URI},
+//                {"ContactsContract.CommonDataKinds.Email.CONTENT_URI", ContactsContract.CommonDataKinds.Email.CONTENT_URI},
+//                {"ContactsContract.CommonDataKinds.Email.CONTENT_LOOKUP_URI", ContactsContract.CommonDataKinds.Email.CONTENT_LOOKUP_URI},
+//                {"ContactsContract.CommonDataKinds.Email.CONTENT_FILTER_URI", ContactsContract.CommonDataKinds.Email.CONTENT_FILTER_URI},
+//                {"ContactsContract.CommonDataKinds.StructuredPostal.CONTENT_URI", ContactsContract.CommonDataKinds.StructuredPostal.CONTENT_URI},
+//                {"ContactsContract.CommonDataKinds.Callable.CONTENT_URI", ContactsContract.CommonDataKinds.Callable.CONTENT_URI},
+//                {"ContactsContract.CommonDataKinds.Callable.CONTENT_FILTER_URI", ContactsContract.CommonDataKinds.Callable.CONTENT_FILTER_URI},
+//                {"ContactsContract.CommonDataKinds.Contactables.CONTENT_URI", ContactsContract.CommonDataKinds.Contactables.CONTENT_URI},
+//                {"ContactsContract.CommonDataKinds.Contactables.CONTENT_FILTER_URI", ContactsContract.CommonDataKinds.Contactables.CONTENT_FILTER_URI},
+//                {"ContactsContract.Groups.CONTENT_URI", ContactsContract.Groups.CONTENT_URI},
+//                {"ContactsContract.Groups.CONTENT_SUMMARY_URI", ContactsContract.Groups.CONTENT_SUMMARY_URI},
+//                {"ContactsContract.AggregationExceptions.CONTENT_URI", ContactsContract.AggregationExceptions.CONTENT_URI},
+//                {"ContactsContract.Settings.CONTENT_URI", ContactsContract.Settings.CONTENT_URI},
+//                {"ContactsContract.DataUsageFeedback.FEEDBACK_URI", ContactsContract.DataUsageFeedback.FEEDBACK_URI},
+//                {"ContactsContract.DataUsageFeedback.DELETE_USAGE_URI", ContactsContract.DataUsageFeedback.DELETE_USAGE_URI},
+//                {"ContactsContract.DisplayPhoto.CONTENT_URI", ContactsContract.DisplayPhoto.CONTENT_URI},
+//                {"ContactsContract.DisplayPhoto.CONTENT_MAX_DIMENSIONS_URI", ContactsContract.DisplayPhoto.CONTENT_MAX_DIMENSIONS_URI},
+//                {"MediaStore.Images.Media.EXTERNAL_CONTENT_URI", MediaStore.Images.Media.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Images.Media.INTERNAL_CONTENT_URI", MediaStore.Images.Media.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI", MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Images.Thumbnails.INTERNAL_CONTENT_URI", MediaStore.Images.Thumbnails.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Media.EXTERNAL_CONTENT_URI", MediaStore.Audio.Media.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Media.INTERNAL_CONTENT_URI", MediaStore.Audio.Media.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Genres.EXTERNAL_CONTENT_URI", MediaStore.Audio.Genres.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Genres.INTERNAL_CONTENT_URI", MediaStore.Audio.Genres.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI", MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Playlists.INTERNAL_CONTENT_URI", MediaStore.Audio.Playlists.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Artists.EXTERNAL_CONTENT_URI", MediaStore.Audio.Artists.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Artists.INTERNAL_CONTENT_URI", MediaStore.Audio.Artists.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI", MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Audio.Albums.INTERNAL_CONTENT_URI", MediaStore.Audio.Albums.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Video.Media.EXTERNAL_CONTENT_URI", MediaStore.Video.Media.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Video.Media.INTERNAL_CONTENT_URI", MediaStore.Video.Media.INTERNAL_CONTENT_URI},
+//                {"MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI", MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI},
+//                {"MediaStore.Video.Thumbnails.INTERNAL_CONTENT_URI", MediaStore.Video.Thumbnails.INTERNAL_CONTENT_URI},
+//                {"Settings.System.CONTENT_URI", Settings.System.CONTENT_URI},
+//                {"Settings.System.DEFAULT_ALARM_ALERT_URI", Settings.System.DEFAULT_ALARM_ALERT_URI},
+//                {"Settings.System.DEFAULT_NOTIFICATION_URI", Settings.System.DEFAULT_NOTIFICATION_URI},
+//                {"Settings.System.DEFAULT_RINGTONE_URI", Settings.System.DEFAULT_RINGTONE_URI},
+//                {"Settings.Secure.CONTENT_URI", Settings.Secure.CONTENT_URI},
+//                {"Settings.Global.CONTENT_URI", Settings.Global.CONTENT_URI},
+//                {"Telephony.Sms.CONTENT_URI", Telephony.Sms.CONTENT_URI},
+//                {"Telephony.Sms.Inbox.CONTENT_URI", Telephony.Sms.Inbox.CONTENT_URI},
+//                {"Telephony.Sms.Sent.CONTENT_URI", Telephony.Sms.Sent.CONTENT_URI},
+//                {"Telephony.Sms.Draft.CONTENT_URI", Telephony.Sms.Draft.CONTENT_URI},
+//                {"Telephony.Sms.Outbox.CONTENT_URI", Telephony.Sms.Outbox.CONTENT_URI},
+//                {"Telephony.Sms.Conversations.CONTENT_URI", Telephony.Sms.Conversations.CONTENT_URI},
+//                {"Telephony.Threads.CONTENT_URI", Telephony.Threads.CONTENT_URI},
+//                {"Telephony.Threads.OBSOLETE_THREADS_URI", Telephony.Threads.OBSOLETE_THREADS_URI},
+//                {"Telephony.Mms.CONTENT_URI", Telephony.Mms.CONTENT_URI},
+//                {"Telephony.Mms.REPORT_REQUEST_URI", Telephony.Mms.REPORT_REQUEST_URI},
+//                {"Telephony.Mms.REPORT_STATUS_URI", Telephony.Mms.REPORT_STATUS_URI},
+//                {"Telephony.Mms.Inbox.CONTENT_URI", Telephony.Mms.Inbox.CONTENT_URI},
+//                {"Telephony.Mms.Sent.CONTENT_URI", Telephony.Mms.Sent.CONTENT_URI},
+//                {"Telephony.Mms.Draft.CONTENT_URI", Telephony.Mms.Draft.CONTENT_URI},
+//                {"Telephony.Mms.Outbox.CONTENT_URI", Telephony.Mms.Outbox.CONTENT_URI},
+//                {"Telephony.Mms.Rate.CONTENT_URI", Telephony.Mms.Rate.CONTENT_URI},
+//                {"Telephony.MmsSms.CONTENT_URI", Telephony.MmsSms.CONTENT_URI},
+//                {"Telephony.MmsSms.CONTENT_CONVERSATIONS_URI", Telephony.MmsSms.CONTENT_CONVERSATIONS_URI},
+//                {"Telephony.MmsSms.CONTENT_FILTER_BYPHONE_URI", Telephony.MmsSms.CONTENT_FILTER_BYPHONE_URI},
+//                {"Telephony.MmsSms.CONTENT_UNDELIVERED_URI", Telephony.MmsSms.CONTENT_UNDELIVERED_URI},
+//                {"Telephony.MmsSms.CONTENT_DRAFT_URI", Telephony.MmsSms.CONTENT_DRAFT_URI},
+//                {"Telephony.MmsSms.CONTENT_LOCKED_URI", Telephony.MmsSms.CONTENT_LOCKED_URI},
+//                {"Telephony.MmsSms.SEARCH_URI", Telephony.MmsSms.SEARCH_URI},
+//                {"Telephony.MmsSms.PendingMessages.CONTENT_URI", Telephony.MmsSms.PendingMessages.CONTENT_URI},
+//                {"Telephony.Carriers.CONTENT_URI", Telephony.Carriers.CONTENT_URI},
+//                {"UserDictionary.CONTENT_URI", UserDictionary.CONTENT_URI},
+//                {"UserDictionary.Words.CONTENT_URI", UserDictionary.Words.CONTENT_URI},
+//                {"VoicemailContract.Voicemails.CONTENT_URI", VoicemailContract.Voicemails.CONTENT_URI},
+//                {"VoicemailContract.Status.CONTENT_URI", VoicemailContract.Status.CONTENT_URI}
+//        };
+//
+//
+//        String[] builtInProviderDesc = describeUris(this, builtInUris);
+//        writeTableOfStringToFile(providersOverview, builtInProviderDesc);
+
+
+        setContentView(R.layout.activity_main);
     }
 
     /**
@@ -130,6 +273,38 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private String selectIdCalendar(String name) {
+        mCalendarName = name;
+        PlatformUtils.checkAndAskForPermission(this, Manifest.permission.READ_CALENDAR,
+                PlatformUtils.PERMISSION_READ_CALENDAR);
+        Cursor cursor = mContext.getContentResolver().query(CalendarContract.Calendars.CONTENT_URI,
+                new String[]{CalendarContract.Calendars._ID}, CalendarContract.Calendars.NAME + " " +
+                        "=?", new String[]{name}, null);
+        cursor.moveToNext();
+        return cursor.getString(0);
+    }
+
+    private void insertEvent(String title, String description, String calendarId, long dtstart,
+                             long dtend, String eventTimeZone) {
+        ArrayList<ContentProviderOperation> ops = new ArrayList<>();
+        ops.add(ContentProviderOperation.newInsert(
+                CalendarContract.Events.CONTENT_URI)
+                .withValue(CalendarContract.Events.CALENDAR_ID, calendarId)
+                .withValue(CalendarContract.Events.DTSTART, dtstart)
+                .withValue(CalendarContract.Events.DTEND, dtend)
+                .withValue(CalendarContract.Events.EVENT_TIMEZONE, eventTimeZone)
+                .withValue(CalendarContract.Events.TITLE, title)
+                .withValue(CalendarContract.Events.DESCRIPTION, description)
+                .build());
+
+        try {
+            mContext.getContentResolver().applyBatch(CalendarContract.AUTHORITY, ops);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(mContext, "Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void completeRawContactGivenForSync(String rawContactId, Cursor cursorWithRawContactInfos) {
         ArrayList<ContentProviderOperation> ops = new ArrayList<>();
 
@@ -208,7 +383,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        Log.i("Log", "requestCode" + requestCode);
+        switch (requestCode) {
+            case PlatformUtils.PERMISSION_READ_CALENDAR: {
+                selectIdCalendar(mCalendarName);
+            }
+        }
     }
 
     private Cursor distinctTable(String name) {
