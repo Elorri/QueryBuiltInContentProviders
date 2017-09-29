@@ -3,6 +3,8 @@ package com.elorri.android.querybuiltincontentproviders;
 
 import android.Manifest;
 import android.content.ContentProviderOperation;
+import android.content.ContentProviderResult;
+import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,6 +22,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         openHelper = new DbHelper(mContext);
         db = openHelper.getWritableDatabase();
 
-        addTieUsActionsToProfileData();
+//        addTieUsActionsToProfileData();
 
 //        addTieUsContactToContactData("100 digital", "2130837641", null, null, null, null, "1", "0", "-8812853");
 //        addTieUsContactToContactData("2adweb", "2130837641", null, null, null, null, "1", "0", "-6190977");
@@ -1703,13 +1706,17 @@ public class MainActivity extends AppCompatActivity {
 //        addTieUsContactToContactData("Électrique Red", "2130837641", null, null, null, null, "0", "0", "-11684180");
 
 
-//        //I'm following tutorial here part "Adding Events"
-//        //https://developer.android.com/guide/topics/providers/calendar-provider.html
-//        String calendarId = selectIdCalendar("Business");
-//        long dtstart = DateUtils.todayStart();
-//        long dtend = DateUtils.addHours(1, dtstart);
-//        String eventTimeZone = TimeZone.getDefault().getID();
-//        insertEvent("Audiensiel call", "Workout", calendarId, dtstart, dtend, eventTimeZone);
+        //I'm following tutorial here part "Adding Events"
+        //https://developer.android.com/guide/topics/providers/calendar-provider.html
+        String calendarId = selectIdCalendar("Business");
+        long dtstart = DateUtils.todayStart();
+        long dtend = DateUtils.addHours(1, dtstart);
+        String eventTimeZone = TimeZone.getDefault().getID();
+        String idEvent = String.valueOf(insertEvent("Audiensiel call", "Workout", calendarId, dtstart, dtend,
+                eventTimeZone));
+        PlatformUtils.checkAndAskForPermission(this, Manifest.permission.READ_CALENDAR);
+        createTableAs("events", mContext.getContentResolver().query(CalendarContract.Events
+                .CONTENT_URI, null, CalendarContract.Events._ID + "=?", new String[]{idEvent}, null));
 
 //        //Merge all raw contact into the google raw contact that will sync
 //        preparePushContactsTo("com.google", "etchemendy.elorri@gmail.com");
@@ -1903,8 +1910,7 @@ public class MainActivity extends AppCompatActivity {
                 .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, accountName)
                 .build());
         try {
-            PlatformUtils.checkAndAskForPermission(this, Manifest.permission.WRITE_PROFILE,
-                    PlatformUtils.PERMISSION_WRITE_CONTACTS);
+            //PlatformUtils.checkAndAskForPermission(this, Manifest.permission.WRITE_PROFILE, PlatformUtils.PERMISSION_WRITE_CONTACTS);
             mContext.getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
         } catch (Exception e) {
             e.printStackTrace();
@@ -2137,7 +2143,7 @@ public class MainActivity extends AppCompatActivity {
         return cursor.getString(0);
     }
 
-    private void insertEvent(String title, String description, String calendarId, long dtstart,
+    private Long insertEvent(String title, String description, String calendarId, long dtstart,
                              long dtend, String eventTimeZone) {
         ArrayList<ContentProviderOperation> ops = new ArrayList<>();
         ops.add(ContentProviderOperation.newInsert(
@@ -2151,11 +2157,17 @@ public class MainActivity extends AppCompatActivity {
                 .build());
 
         try {
-            mContext.getContentResolver().applyBatch(CalendarContract.AUTHORITY, ops);
+            //The ContentResolver.applyBatch() method returns an array of ContentProviderResult objects, one for each operation.
+            //Each of these has the uri of the inserted contact (in the format content://com.android.contacts/raw_contacts/<contact_id>).
+            ContentProviderResult[] res = mContext.getContentResolver().applyBatch(CalendarContract.AUTHORITY, ops);
+            return ContentUris.parseId(res[0].uri);
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(mContext, "Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            return null;
         }
+
+
     }
 
     private void completeRawContactGivenForSync(String rawContactId, Cursor cursorWithRawContactInfos) {
