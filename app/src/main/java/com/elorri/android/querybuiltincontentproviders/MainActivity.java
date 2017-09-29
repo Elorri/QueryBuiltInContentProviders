@@ -6,9 +6,11 @@ import android.content.ContentProviderOperation;
 import android.content.ContentProviderResult;
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.OperationApplicationException;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.provider.CalendarContract;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -52,9 +54,11 @@ public class MainActivity extends AppCompatActivity {
         openHelper = new DbHelper(mContext);
         db = openHelper.getWritableDatabase();
 
+        removeTieUsContactFromContactData();
+
 //        addTieUsActionsToProfileData();
 
-//        addTieUsContactToContactData("100 digital", "2130837641", null, null, null, null, "1", "0", "-8812853");
+//        addTieUsContactToContactData("100 digital", "2130837641", null, null, null, null, "1","0", "-8812853");
 //        addTieUsContactToContactData("2adweb", "2130837641", null, null, null, null, "1", "0", "-6190977");
 //        addTieUsContactToContactData("2bhl", "2130837641", null, null, null, null, "1", "0", "-6982195");
 //        addTieUsContactToContactData("2c informatique", "2130837641", null, null, null, null, "1", "0", "-8271996");
@@ -1856,6 +1860,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main);
+    }
+
+    private void removeTieUsContactFromContactData() {
+        //Because I have finally decided to not use android contact provider to store my tie us
+        // contacts (Because anyway I won't be able to store profile data), I therefore remove
+        // what I have peviously added.
+        ArrayList<ContentProviderOperation> cpo=new ArrayList<>();
+        cpo.add(ContentProviderOperation.newDelete(ContactsContract.Data.CONTENT_URI)
+        .withSelection(ContactsContract.Data.MIMETYPE + "=?", new
+                String[]{TieUsContract.Contact.CONTENT_ITEM_TYPE})
+                .build());
+        try{
+            mContext.getContentResolver().applyBatch(ContactsContract.AUTHORITY, cpo);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        } catch (OperationApplicationException e) {
+            e.printStackTrace();
+        }
     }
 
     private void addTieUsActionsToProfileData() {
