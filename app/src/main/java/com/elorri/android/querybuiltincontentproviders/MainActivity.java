@@ -24,7 +24,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -54,7 +53,18 @@ public class MainActivity extends AppCompatActivity {
         openHelper = new DbHelper(mContext);
         db = openHelper.getWritableDatabase();
 
-        removeTieUsContactFromContactData();
+        //Get all contacts id
+        String[] PROJECTION = {
+                ContactsContract.Contacts._ID,
+                ContactsContract.Contacts.LOOKUP_KEY,
+                ContactsContract.Contacts.DISPLAY_NAME,
+                ContactsContract.Contacts.PHOTO_THUMBNAIL_URI
+        };
+        Cursor androidCursor = getAndroidContacts(PROJECTION);
+        Log.e("QCP", Thread.currentThread().getStackTrace()[2]+"");
+        createTableAs("AllContacts", androidCursor);
+
+//        removeTieUsContactFromContactData();
 
 //        addTieUsActionsToProfileData();
 
@@ -1712,15 +1722,15 @@ public class MainActivity extends AppCompatActivity {
 
         //I'm following tutorial here part "Adding Events"
         //https://developer.android.com/guide/topics/providers/calendar-provider.html
-        String calendarId = selectIdCalendar("Business");
-        long dtstart = DateUtils.todayStart();
-        long dtend = DateUtils.addHours(1, dtstart);
-        String eventTimeZone = TimeZone.getDefault().getID();
-        String idEvent = String.valueOf(insertEvent("Audiensiel call", "Workout", calendarId, dtstart, dtend,
-                eventTimeZone));
-        PlatformUtils.checkAndAskForPermission(this, Manifest.permission.READ_CALENDAR);
-        createTableAs("events", mContext.getContentResolver().query(CalendarContract.Events
-                .CONTENT_URI, null, CalendarContract.Events._ID + "=?", new String[]{idEvent}, null));
+//        String calendarId = selectIdCalendar("Business");
+//        long dtstart = DateUtils.todayStart();
+//        long dtend = DateUtils.addHours(1, dtstart);
+//        String eventTimeZone = TimeZone.getDefault().getID();
+//        String idEvent = String.valueOf(insertEvent("Audiensiel call", "Workout", calendarId, dtstart, dtend,
+//                eventTimeZone));
+//        PlatformUtils.checkAndAskForPermission(this, Manifest.permission.READ_CALENDAR);
+//        createTableAs("events", mContext.getContentResolver().query(CalendarContract.Events
+//                .CONTENT_URI, null, CalendarContract.Events._ID + "=?", new String[]{idEvent}, null));
 
 //        //Merge all raw contact into the google raw contact that will sync
 //        preparePushContactsTo("com.google", "etchemendy.elorri@gmail.com");
@@ -1862,16 +1872,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    private Cursor getAndroidContacts(String[] projection) {
+        return mContext.getContentResolver().query(
+                ContactsContract.Contacts.CONTENT_URI,
+                projection,
+                null,
+                null,
+                null);
+    }
+
     private void removeTieUsContactFromContactData() {
         //Because I have finally decided to not use android contact provider to store my tie us
         // contacts (Because anyway I won't be able to store profile data), I therefore remove
         // what I have peviously added.
-        ArrayList<ContentProviderOperation> cpo=new ArrayList<>();
+        ArrayList<ContentProviderOperation> cpo = new ArrayList<>();
         cpo.add(ContentProviderOperation.newDelete(ContactsContract.Data.CONTENT_URI)
-        .withSelection(ContactsContract.Data.MIMETYPE + "=?", new
-                String[]{TieUsContract.Contact.CONTENT_ITEM_TYPE})
+                .withSelection(ContactsContract.Data.MIMETYPE + "=?", new
+                        String[]{TieUsContract.Contact.CONTENT_ITEM_TYPE})
                 .build());
-        try{
+        try {
             mContext.getContentResolver().applyBatch(ContactsContract.AUTHORITY, cpo);
         } catch (RemoteException e) {
             e.printStackTrace();
